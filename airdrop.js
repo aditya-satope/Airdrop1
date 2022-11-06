@@ -16,7 +16,6 @@ const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
   const airdropSignature = await connection.requestAirdrop(
     keypair.publicKey,
     LAMPORTS_PER_SOL
-// node
   );
 
   const latestBlockHash = await connection.getLatestBlockhash();
@@ -29,7 +28,7 @@ const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
   console.log({
     publicKey: keypair.publicKey,
-    privateKey: keypair.privateKey,
+    privateKey: keypair.secretKey,
     signature: airdropSignature,
     txn,
   });
